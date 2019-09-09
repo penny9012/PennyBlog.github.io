@@ -6,15 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://penny9012.github.io">
-  <title>Archives | Hexo</title>
+  <title>Learn Error/Eexception | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="https://penny9012.github.io/archives/index.html">
+  <meta name="description" content="异常/错误在Java当中有一个定好的规则Throwable（抛出） Error错误通常是一些物理性的，JVM虚拟机本身出现问题，程序指令是处理不了的StackOverflowWError(栈内存错误)OutofMemoryError(堆内存错误) Exception异常通常是一种人为规定的不正常的现象，通常是给定的程序指令产生了一些不规范的事情 运行时异常（非检查异常）">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Learn Error&#x2F;Eexception">
+<meta property="og:url" content="https://penny9012.github.io/2019/09/09/Learn-Error-Eexception/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="异常/错误在Java当中有一个定好的规则Throwable（抛出） Error错误通常是一些物理性的，JVM虚拟机本身出现问题，程序指令是处理不了的StackOverflowWError(栈内存错误)OutofMemoryError(堆内存错误) Exception异常通常是一种人为规定的不正常的现象，通常是给定的程序指令产生了一些不规范的事情 运行时异常（非检查异常）">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-09-09T13:02:52.440Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="Learn Error&#x2F;Eexception">
+<meta name="twitter:description" content="异常/错误在Java当中有一个定好的规则Throwable（抛出） Error错误通常是一些物理性的，JVM虚拟机本身出现问题，程序指令是处理不了的StackOverflowWError(栈内存错误)OutofMemoryError(堆内存错误) Exception异常通常是一种人为规定的不正常的现象，通常是给定的程序指令产生了一些不规范的事情 运行时异常（非检查异常）">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -150,103 +154,211 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-Learn-Error-Eexception" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      Learn Error/Eexception
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/09/09/Learn-Error-Eexception/" class="archive-article-date">
+
+        
+        <a href="/2019/09/09/Learn-Error-Eexception/" class="archive-article-date">
   	<time datetime="2019-09-09T08:05:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-09</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/09/09/Learn-Error-Eexception/">Learn Error/Eexception</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="异常-错误"><a href="#异常-错误" class="headerlink" title="异常/错误"></a>异常/错误</h3><p>在Java当中有一个定好的规则Throwable（抛出）</p>
+<h4 id="Error错误"><a href="#Error错误" class="headerlink" title="Error错误"></a>Error错误</h4><p>通常是一些物理性的，JVM虚拟机本身出现问题，程序指令是处理不了的<br>StackOverflowWError(栈内存错误)<br>OutofMemoryError(堆内存错误)</p>
+<h4 id="Exception异常"><a href="#Exception异常" class="headerlink" title="Exception异常"></a>Exception异常</h4><p>通常是一种人为规定的不正常的现象，通常是给定的程序指令产生了一些不规范的事情</p>
+<h3 id="运行时异常（非检查异常）"><a href="#运行时异常（非检查异常）" class="headerlink" title="运行时异常（非检查异常）"></a>运行时异常（非检查异常）</h3><a id="more"></a>
+<pre><code>Error和RuntimeException都算做运行时异常
+Javac编译的时候 不会提示和发现
+在程序编写时不要求必须做出处理  可以添加处理手段（try,throws）
+1.InputMisMatchException 输入类型不匹配   int type = input.nextInt();//asd
+    2.NumberFormatException 数字格式化 int value = integer.parseInt(&quot;123.45&quot;);
+    3.NegativeArraySizeException 数组长度负数 int [] array = new int [-2];
+    4.NullpointerException 空指针异常
+        int [] [] array = new int [3] [];
+        array[0][0] = 10;
 
-        <div class="article-info info-on-right">
-          
-          
+        person p = null;
+        p.getName();
+    5.ArithmeticException 数字异常 10/0 整数不允许除以0 || 小数除以0会产生无穷 Infinity
+    6.ClassCastException 造型异常
+        person p = new Teacher();
+        Student s = (Student)p;
+    7.StringIndexOutBoundsException 字符串越界
+        String Str = &quot;zxc&quot;;
+        Str.charAr(5);
+    8.ArrayIndexOutOfBoundsException 数组索引越界
+        int [] array = {1,2,3,4,5};
+        array[10];
+    9.IndexOutOfBoundsException 集合越界
+        List家族
+        ArrayList list = new ArrayList();
+        list.add();
+        list.add();
+        list.add();
+        list.get(5);
+    10.IllegalArgumentException 非法参数异常
+        ArrayList list= new ArrayList(-1);</code></pre><h3 id="编译时异常（检查异常）：必须处理"><a href="#编译时异常（检查异常）：必须处理" class="headerlink" title="编译时异常（检查异常）：必须处理"></a>编译时异常（检查异常）：必须处理</h3><pre><code>除了Error和RuntimeException以外其他的异常
+    Javac编译的时候，强制要求我们去处理（try或throws）
+    因为这样的异常在程序运行过程中极有可能产生问题的
+    InterruptException</code></pre><h4 id="添加处理异常的手段"><a href="#添加处理异常的手段" class="headerlink" title="添加处理异常的手段"></a>添加处理异常的手段</h4><pre><code>处理异常不是 异常消失了
+处理异常指的是 处理异常之后 后续的代码不会因为此异常二终止了执行</code></pre><p>  两种手段<br>    try{}catch(){}finally{}<br>    try不能单独的出现<br>    后面必须添加catch或者finally<br>    catch（）这组括号是为了捕获某种异常<br>    catch可以有很多个存在<br>        捕获的异常之间没有任何继承关系<br>        捕获的异常需要从小到大进行捕获<br>    finally不是必须存在的<br>        要是存在必须执行<br>        final finally finalize的区别<br>            final 特征修饰符 修饰变量 属性 方法 类<br>                    修饰变量 基本类型 值不能改变 引用类型 地址不能改变<br>                    修饰属性 特点与修饰变量类似（要求必须给属性赋初始值否则编译报错）<br>                    修饰方法 不能被子类重写<br>                    修饰类 不能被其他的子类继承</p>
+<pre><code>    finally 处理异常手段的一部分
+            try{}catch(){}后面的部分
+            这个部分可有可无 如果有只能含有一份且必须执行
 
+    finalize Object类中的一个protected方法
+            对象没有任何引用指向的时候 - - 会被GC回收
+            当对象回收的时候 默认调用finalize方法
+
+处理异常放在方法内部，可能还会有小问题
+    如果在方法内部有返回值
+    不管返回值return关键字在哪，finally都会执行完毕</code></pre><h3 id="throws抛出"><a href="#throws抛出" class="headerlink" title="throws抛出"></a>throws抛出</h3><pre><code>1.异常只能在方法上抛出，属性是不能处理异常的
+2.方法 构造
+3.抛出的有偿与多个catch类似</code></pre><h3 id="自定义异常"><a href="#自定义异常" class="headerlink" title="自定义异常"></a>自定义异常</h3><pre><code>如果继承是RuntimeException---&gt;运行时异常（不需要必须添加处理手段）
+如果继承是Exception----------&gt;编译时异常（必须添加处理手段）</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">public class MyException extends RuntimeException &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">public class TextException()&#123;</span><br><span class="line">    public void testMyException()&#123;</span><br><span class="line">        if(3&gt;2)&#123;</span><br><span class="line">            throw new MyException();</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println();</span><br><span class="line">    &#125;</span><br><span class="line">    public static void main(String[] args) throws Exception&#123;</span><br><span class="line">        TextException te = new TextException();</span><br><span class="line">        te.testMyException();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://penny9012.github.io/2019/09/09/Learn-Error-Eexception/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/09/06/MyFristBlog/" class="archive-article-date">
-  	<time datetime="2019-09-06T13:19:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-06</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2019/09/06/MyFristBlog/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">&#39;搭建GitHub+hexo博客&#39;</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/09/06/MyFristBlog/">&#39;搭建GitHub+hexo博客&#39;</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/09/06/hello-world/" class="archive-article-date">
-  	<time datetime="2019-09-06T10:15:42.364Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-06</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/09/06/hello-world/">Hello World</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
 
 
           </div>
@@ -269,8 +381,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
